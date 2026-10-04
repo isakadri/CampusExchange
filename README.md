@@ -1,33 +1,89 @@
-
-
+<div align="center">
 
 📚 CampusBook Exchange
-A college-focused second-hand textbook marketplace built with Java Servlets, JSP, JDBC, and MySQL.
 
-CampusBook Exchange is a web-based marketplace designed specifically for college students to buy, sell, search, reserve, and manage second-hand academic textbooks.
+A College-Focused Second-Hand Textbook Marketplace
 
-Students often purchase expensive textbooks for a semester and then struggle to resell them. Existing platforms and messaging groups are either too broad, unstructured, or do not provide college-specific searching. CampusBook Exchange solves this problem by organizing books around departments, semesters, subject codes, editions, authors, and book conditions.
+<p>
+  <strong>Buy • Sell • Search • Reserve • Reuse</strong>
+</p>
 
-🚀 Live Project Flow
-Register
-   ↓
-Login
-   ↓
-Browse / Search Books
-   ↓
-View Book Details
-   ↓
-Reserve Book
-   ↓
-Seller Receives Request
-   ↓
-Accept / Reject
-   ↓
-Accepted → SOLD
-Rejected → AVAILABLE
-✨ Key Features
-👤 User Authentication
-Student registration and login
+<p>
+  <img src="https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk&logoColor=white">
+  <img src="https://img.shields.io/badge/JSP-Servlets-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/JDBC-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+  <img src="https://img.shields.io/badge/Apache%20Tomcat-10.1-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=black">
+  <img src="https://img.shields.io/badge/HTML5-CSS3-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+</p>
+
+<p>
+  <a href="#-features">Features</a> •
+  <a href="#-screenshots">Screenshots</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-future-improvements">Future Improvements</a>
+</p>
+
+</div>
+
+📖 About The Project
+
+CampusBook Exchange is a college-focused web application that helps students buy and sell second-hand academic textbooks.
+
+Students often purchase expensive textbooks for a semester and then struggle to find relevant buyers after completing their courses. Existing platforms such as general marketplaces or messaging groups are not designed specifically around academic requirements.
+
+CampusBook Exchange provides a structured marketplace where students can discover books using:
+
+Department
+
+Semester
+
+Subject Code
+
+Subject Name
+
+Book Title
+
+Author
+
+Edition
+
+Book Condition
+
+The application also provides a complete buyer-seller reservation workflow, listing management, authentication, and an estimated textbook buyback value.
+
+🎯 Problem Statement
+
+College students spend a significant amount of money on textbooks that may only be required for one semester. After completing the course, finding the right buyer can be difficult.
+
+CampusBook Exchange aims to solve this problem by creating a centralized platform specifically for students, making textbook discovery and resale easier and more organized.
+
+💡 Solution
+
+The application connects students who want to sell unused textbooks with students looking for affordable second-hand books.
+
+Seller
+  │
+  ├── Add Book
+  ├── Manage Listing
+  └── Receive Reservation
+            │
+            ▼
+       CampusBook Exchange
+            │
+            ▼
+          Buyer
+  ├── Search Book
+  ├── View Details
+  └── Reserve Book
+
+✨ Features
+
+👤 Authentication
+
+Student registration
+
+Secure login
 
 BCrypt password hashing
 
@@ -38,125 +94,306 @@ Logout functionality
 Authentication filter for protected pages
 
 📚 Book Marketplace
-Add second-hand textbooks
 
-Edit your own listings
+Students can:
+
+Add textbooks
+
+Edit their listings
 
 Delete available listings
 
-View personal listings
+View their own listings
 
-Book condition tracking
+Set book condition
 
-Original price and selling price
+Set original and selling prices
 
-Book status tracking
+Add book descriptions
 
-🔎 Smart Book Search
-Search books using:
+Track book status
 
-Book title
+Supported Book Status
 
-Author
+Status
 
-Edition
+Description
 
-Subject code
+🟡 AVAILABLE
 
-Subject name
+Book is available for reservation
 
-This makes the platform more useful for students than a generic marketplace.
+🔵 RESERVED
+
+Book currently has an active reservation
+
+🟢 SOLD
+
+Seller accepted the reservation
+
+🔴 REJECTED
+
+Reservation was rejected
+
+⚪ CANCELLED
+
+Reservation was cancelled
+
+🔎 Book Search
+
+Books can be searched using multiple academic and book-related fields.
+
+Search
+  │
+  ├── Title
+  ├── Author
+  ├── Edition
+  ├── Subject Code
+  └── Subject Name
+
+This makes the platform more suitable for academic book discovery than a generic marketplace.
 
 📌 Reservation System
-Complete buyer-seller reservation workflow:
 
-Status	Meaning
-PENDING	Buyer requested the book
-ACCEPTED	Seller accepted the request
-REJECTED	Seller rejected the request
-CANCELLED	Buyer cancelled the request
-SOLD	Book has been sold
-🏷️ Buyback Valuation
-The project includes a simple estimated buyback calculator based on:
+CampusBook Exchange provides a complete buyer-seller reservation workflow.
 
-Original price
+Buyer
+  │
+  │ Reserve Book
+  ▼
+PENDING
+  │
+  ├───────────────┐
+  ▼               ▼
+ACCEPTED        REJECTED
+  │               │
+  ▼               ▼
+ SOLD          AVAILABLE
+
+Reservation Statuses
+
+Status
+
+Meaning
+
+PENDING
+
+Buyer has requested the book
+
+ACCEPTED
+
+Seller accepted the request
+
+REJECTED
+
+Seller rejected the request
+
+CANCELLED
+
+Buyer cancelled the request
+
+SOLD
+
+Book was successfully accepted/sold
+
+💰 Buyback Valuation
+
+The application includes a simple estimated textbook buyback calculator.
+
+The estimated value depends on:
+
+Original book price
 
 Book condition
 
 Edition age
 
-Condition-based valuation:
+Condition-Based Valuation
 
-NEW       → 80%
-LIKE_NEW  → 70%
-GOOD      → 60%
-FAIR      → 45%
-POOR      → 30%
-The estimated value is reduced according to edition age, with a minimum valuation rule.
+Condition
 
-Note: Buyback values are project estimates and are not intended to represent guaranteed market prices.
+Base Value
 
-🎨 Modern UI
-Responsive interface
+NEW
 
-Modern dashboard
+80%
 
-Profile page
+LIKE_NEW
 
-Listing management
+70%
 
-Reservation management
+GOOD
 
-Search interface
+60%
 
-Dark mode support
+FAIR
 
-Mobile-friendly layouts
+45%
 
-Status badges and cards
+POOR
+
+30%
+
+Edition age applies an additional reduction according to the application's valuation rules, with a minimum valuation threshold.
+
+⚠️ Note: This is an educational project calculation and does not represent a guaranteed market or resale price.
+
+🎨 User Interface
+
+The application includes a modern responsive interface with:
+
+🏠 Landing page
+
+🔐 Login page
+
+📝 Registration page
+
+📊 Student dashboard
+
+📚 Book search
+
+📖 Book details
+
+➕ Add book
+
+📋 My listings
+
+📌 Reservations
+
+👤 Profile
+
+🌙 Dark mode
+
+📱 Responsive layouts
+
+📸 Screenshots
+
+Add your real screenshots to the screenshots/ directory using the filenames below.
+
+🏠 Home Page
+
+<img src="screenshots/home.png" alt="CampusBook Exchange Home Page" width="900">
+
+🔐 Login
+
+<img src="screenshots/login.png" alt="CampusBook Exchange Login" width="900">
+
+📝 Registration
+
+<img src="screenshots/register.png" alt="CampusBook Exchange Registration" width="900">
+
+📊 Student Dashboard
+
+<img src="screenshots/dashboard.png" alt="CampusBook Exchange Dashboard" width="900">
+
+🔎 Search Books
+
+<img src="screenshots/search-books.png" alt="CampusBook Exchange Search Books" width="900">
+
+📖 Book Details
+
+<img src="screenshots/book-details.png" alt="CampusBook Exchange Book Details" width="900">
+
+➕ Add Book
+
+<img src="screenshots/add-book.png" alt="CampusBook Exchange Add Book" width="900">
+
+📋 My Listings
+
+<img src="screenshots/my-listings.png" alt="CampusBook Exchange My Listings" width="900">
+
+📌 Reservations
+
+<img src="screenshots/reservations.png" alt="CampusBook Exchange Reservations" width="900">
+
+👤 Profile
+
+<img src="screenshots/profile.png" alt="CampusBook Exchange Profile" width="900">
+
+🌙 Dark Mode
+
+<img src="screenshots/dark-mode.png" alt="CampusBook Exchange Dark Mode" width="900">
 
 🛠️ Technology Stack
-Technology	Purpose
-☕ Java	Backend programming
-🌐 JSP	Dynamic web pages
-⚙️ Servlets	Request handling
-🗄️ JDBC	Database connectivity
-🐬 MySQL	Relational database
-🎨 HTML5	Page structure
-🎨 CSS3	UI styling
-🔐 jBCrypt	Password hashing
-🖥️ Apache Tomcat 10.1	Application server
-🏗️ Architecture
-CampusBook Exchange follows an MVC-style layered architecture.
 
-                    ┌─────────────────────┐
-                    │      Browser        │
-                    │   HTML / JSP / CSS  │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      Servlets       │
-                    │   Controller Layer   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │        DAO          │
-                    │   Database Logic    │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │        JDBC         │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │        MySQL        │
-                    │     Database        │
-                    └─────────────────────┘
-Application Layers
+Technology
+
+Usage
+
+☕ Java
+
+Backend development
+
+🌐 JSP
+
+Dynamic web pages
+
+⚙️ Servlets
+
+HTTP request handling
+
+🔌 JDBC
+
+Database connectivity
+
+🐬 MySQL
+
+Relational database
+
+🎨 HTML5
+
+Frontend structure
+
+🎨 CSS3
+
+Styling and responsive UI
+
+🔐 jBCrypt
+
+Password hashing
+
+🖥️ Apache Tomcat 10.1
+
+Web application server
+
+🧰 Eclipse / IDE
+
+Development environment
+
+🏗️ Architecture
+
+CampusBook Exchange follows a layered MVC-style architecture.
+
+┌──────────────────────────────┐
+│          Browser             │
+│       JSP / HTML / CSS       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│          Servlets            │
+│       Controller Layer       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│            DAO               │
+│       Data Access Layer      │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│            JDBC              │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│           MySQL              │
+│          Database            │
+└──────────────────────────────┘
+
+Request Flow
+
 JSP
  ↓
 Servlet
@@ -166,9 +403,15 @@ DAO
 JDBC
  ↓
 MySQL
-The project separates presentation, request handling, business/data access logic, models, and database connectivity to keep the application maintainable.
+ ↓
+DAO
+ ↓
+Servlet
+ ↓
+JSP
 
 📂 Project Structure
+
 CampusBookExchange/
 │
 ├── src/main/java/com/campusbook/
@@ -211,141 +454,170 @@ CampusBookExchange/
 │   └── filter/
 │       └── AuthenticationFilter.java
 │
-└── src/main/webapp/
-    │
-    ├── index.jsp
-    ├── login.jsp
-    ├── register.jsp
-    ├── css/
-    ├── js/
-    ├── images/
-    │
-    ├── student/
-    │   ├── dashboard.jsp
-    │   ├── add-book.jsp
-    │   ├── edit-book.jsp
-    │   ├── my-listings.jsp
-    │   ├── my-reservations.jsp
-    │   ├── profile.jsp
-    │   ├── buyback.jsp
-    │   └── buyback-result.jsp
-    │
-    ├── books/
-    │   ├── search.jsp
-    │   ├── book-details.jsp
-    │   └── search-results.jsp
-    │
-    └── error/
-        ├── 404.jsp
-        └── 500.jsp
-🗄️ Database Design
-The application uses MySQL with relational tables for users, academic subjects, books, reservations, and buyback calculations.
+├── src/main/webapp/
+│   │
+│   ├── index.jsp
+│   ├── login.jsp
+│   ├── register.jsp
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │
+│   ├── images/
+│   │
+│   ├── student/
+│   │   ├── dashboard.jsp
+│   │   ├── add-book.jsp
+│   │   ├── edit-book.jsp
+│   │   ├── my-listings.jsp
+│   │   ├── my-reservations.jsp
+│   │   ├── profile.jsp
+│   │   ├── buyback.jsp
+│   │   └── buyback-result.jsp
+│   │
+│   ├── books/
+│   │   ├── search.jsp
+│   │   ├── book-details.jsp
+│   │   └── search-results.jsp
+│   │
+│   └── error/
+│       ├── 404.jsp
+│       └── 500.jsp
+│
+├── screenshots/
+│   ├── home.png
+│   ├── login.png
+│   ├── register.png
+│   ├── dashboard.png
+│   ├── search-books.png
+│   ├── book-details.png
+│   ├── add-book.png
+│   ├── my-listings.png
+│   ├── reservations.png
+│   ├── profile.png
+│   └── dark-mode.png
+│
+└── README.md
 
-users
-  │
-  ├───────────────┐
-  │               │
-  ▼               ▼
-books         reservations
-  │
-  ▼
-subjects
-  │
-  ▼
-departments
+🗄️ Database Design
+
+The project uses MySQL as its relational database.
+
+Database
+
+CREATE DATABASE campus_book_exchange;
+
+Main Tables
+
+┌───────────────┐
+│     users     │
+└───────┬───────┘
+        │
+        │ seller_id / buyer_id
+        ▼
+┌───────────────┐
+│     books     │
+└───┬───────┬───┘
+    │       │
+    │       └───────────────┐
+    ▼                       ▼
+┌───────────────┐    ┌───────────────┐
+│    subjects   │    │  reservations │
+└───────┬───────┘    └───────────────┘
+        │
+        ▼
+┌───────────────┐
+│  departments  │
+└───────────────┘
 
 books
   │
   ▼
 buyback
-Main Tables
+
+Tables
+
+Table
+
+Purpose
+
 users
+
+Student account information
 
 departments
 
+Academic departments
+
 subjects
 
+Subject and semester information
+
 books
+
+Textbook listings
 
 reservations
 
+Buyer reservation requests
+
 buyback
 
-Foreign keys are used to maintain relationships between users, books, subjects, and reservations.
+Estimated textbook valuation
 
 🔐 Security
-The project implements several basic security practices:
 
 Password Hashing
-Passwords are never intentionally stored as plain text during registration.
+
+Passwords are hashed using BCrypt before storage.
 
 String hashedPassword =
         PasswordUtil.hashPassword(password);
-BCrypt is used for password hashing and verification.
+
+Password verification uses BCrypt rather than comparing plaintext passwords.
 
 Authentication Filter
-Protected pages are secured using a Servlet Filter.
 
-Request
-   ↓
-AuthenticationFilter
-   ↓
-Logged In?
-  ↙     ↘
- YES     NO
- ↓       ↓
-Page    Login
-Session Authentication
-A logged-in user is stored in the HTTP session and protected routes verify the session before allowing access.
+Protected student routes are checked using a Servlet Filter.
 
-📸 Screenshots
-Add your actual application screenshots inside the screenshots/ folder using the filenames below.
+               HTTP Request
+                    │
+                    ▼
+        ┌─────────────────────┐
+        │ AuthenticationFilter│
+        └──────────┬──────────┘
+                   │
+             Logged In?
+              /       \
+            YES        NO
+             │          │
+             ▼          ▼
+        Requested      Login
+           Page         Page
 
-🏠 Home Page
+Session Management
 
+The authenticated user is stored in the HTTP session and protected routes verify the session before granting access.
 
-🔐 Login
+⚙️ Installation
 
+1. Clone The Repository
 
-📝 Registration
-
-
-📊 Student Dashboard
-
-
-📚 Browse Books
-
-
-📖 Book Details
-
-
-➕ Add Book
-
-
-📋 My Listings
-
-
-📌 Reservations
-
-
-👤 Profile
-
-
-🌙 Dark Mode
-
-
-⚙️ Installation & Setup
-1. Clone the Repository
 git clone https://github.com/YOUR_USERNAME/CampusBookExchange.git
+
 cd CampusBookExchange
-2. Create the MySQL Database
-Open MySQL and run:
+
+2. Create Database
+
+Open MySQL:
 
 CREATE DATABASE campus_book_exchange;
-Then select it:
 
 USE campus_book_exchange;
-Create the required tables:
+
+Create the following tables:
 
 users
 departments
@@ -353,13 +625,16 @@ subjects
 books
 reservations
 buyback
-Add the project seed data for departments and subjects.
 
-3. Configure Database Connection
-Update your database configuration in:
+Then insert the required department and subject data.
+
+3. Configure MySQL
+
+Open:
 
 src/main/java/com/campusbook/util/DBConnection.java
-Example:
+
+Update your credentials:
 
 private static final String URL =
         "jdbc:mysql://localhost:3306/campus_book_exchange";
@@ -369,10 +644,12 @@ private static final String USER =
 
 private static final String PASSWORD =
         "YOUR_MYSQL_PASSWORD";
-Replace the password with your local MySQL password.
 
-4. Add Required Libraries
-Make sure the project contains:
+Do not commit your real database password to GitHub.
+
+4. Required Dependencies
+
+Make sure the project has:
 
 MySQL Connector/J
 
@@ -381,73 +658,81 @@ jBCrypt
 Jakarta Servlet API compatible with Tomcat 10.1
 
 5. Configure Apache Tomcat
+
 Recommended environment:
 
-Apache Tomcat 10.1.x
-Java 21+
-MySQL 8.x
-Add the project to Tomcat from Eclipse/IDE and start the server.
+Java       : 21+
+MySQL      : 8.x
+Tomcat     : 10.1.x
 
-6. Open the Application
-Example:
+Deploy the project to Apache Tomcat and start the server.
+
+6. Run The Application
+
+Open:
 
 http://localhost:8080/CampusBookExchange/
-🧪 Main Test Flow
-Use this flow to test the complete application:
 
-1. Register Student
-        ↓
+🧪 Testing Flow
+
+Test the complete application using the following workflow:
+
+1. Register
+      ↓
 2. Login
-        ↓
+      ↓
 3. Add Book
-        ↓
+      ↓
 4. Search Book
-        ↓
-5. Open Book Details
-        ↓
+      ↓
+5. View Book Details
+      ↓
 6. Reserve Book
-        ↓
+      ↓
 7. Login as Seller
-        ↓
-8. Open Requests
-        ↓
-9. Accept / Reject Reservation
-        ↓
+      ↓
+8. View Requests
+      ↓
+9. Accept / Reject
+      ↓
 10. Verify Book Status
-📌 Important Functional Modules
+
+🧩 Main Modules
+
 Student Module
+
 Registration
 Login
 Dashboard
 Profile
-Book Listings
-Book Search
+Add Book
+Edit Book
+Delete Book
+My Listings
+Search Books
 Book Details
 Reservations
 Buyback
 Logout
+
 Seller Module
+
 My Listings
-Incoming Reservation Requests
+Reservation Requests
 Buyer Information
 Accept Reservation
 Reject Reservation
 Book Status Management
-💡 Problem Statement
-College students frequently purchase textbooks that are required only for one semester. After completing the course, these books often remain unused because students have difficulty finding relevant buyers.
-
-Existing communication channels such as WhatsApp groups can become difficult to search and manage, while general marketplaces are not specifically designed around academic requirements.
-
-CampusBook Exchange provides a centralized platform where students can find books based on their department, semester, subject code, title, author, and edition.
 
 🎯 Project Objectives
-Create a centralized textbook marketplace for students.
+
+Build a centralized textbook marketplace for college students.
 
 Make academic books easier to discover.
 
-Reduce the cost of textbooks through second-hand sales.
+Reduce textbook expenses through second-hand sales.
 
-Provide a structured reservation process.
+Provide a structured buyer-seller reservation workflow.
 
 Allow students to manage their own listings.
 
@@ -455,10 +740,11 @@ Provide an estimated buyback value.
 
 Practice Java web development using Servlets, JSP, JDBC, and MySQL.
 
-Implement authentication and role-aware application behavior.
+Implement authentication and session-based authorization.
 
-🔮 Future Improvements
-The project can be extended with:
+📈 Future Improvements
+
+The following features can be added in future versions:
 
 💳 Online payment integration
 
@@ -474,11 +760,11 @@ The project can be extended with:
 
 🖼️ Book image upload
 
-🔎 Advanced filters
+🔎 Advanced filtering
 
 ❤️ Wishlist/favorites
 
-📈 Admin analytics dashboard
+📊 Admin analytics dashboard
 
 🧑‍💼 Admin user management
 
@@ -486,48 +772,76 @@ The project can be extended with:
 
 🤖 AI-powered book recommendations
 
-📊 What I Learned
-Through this project, I practiced:
+🧠 Learning Outcomes
 
-Java web application development
+This project provided practical experience with:
 
-JSP and Servlet lifecycle
+Java Web Development
 
-HTTP GET/POST request handling
+JSP
+
+Servlets
 
 MVC architecture
 
-JDBC database connectivity
+JDBC
 
-SQL joins and foreign keys
+MySQL
 
-CRUD operations
+SQL CRUD operations
+
+SQL joins and relationships
+
+Foreign keys
+
+HTTP GET/POST
 
 Session management
 
 Servlet Filters
 
-Password hashing with BCrypt
-
-Relational database design
+BCrypt password hashing
 
 Tomcat deployment
 
 Responsive frontend development
 
-Building complete buyer/seller workflows
+Buyer-seller transaction workflows
 
 👨‍💻 Author
+
+<div align="center">
+
 Isa Abdul Kadri
 
 B.Tech Computer Science Engineering
 Sandipani Technical Campus
 
-Technologies
-Java JSP Servlets JDBC MySQL HTML CSS Tomcat
+<p>
+  <code>Java</code>
+  <code>JSP</code>
+  <code>Servlets</code>
+  <code>JDBC</code>
+  <code>MySQL</code>
+  <code>HTML</code>
+  <code>CSS</code>
+  <code>Tomcat</code>
+</p>
 
-⭐ If you find this project useful
-Give the repository a ⭐ and feel free to explore the code.
+</div>
+
+⭐ Support
+
+If you find this project useful, consider giving the repository a ⭐.
+
+<div align="center">
+
+📚 CampusBook Exchange
+
+Making textbook resale easier for students.
+
+</div>
 
 📄 License
-This project is developed for educational and portfolio purposes.
+
+This project was developed for educational and portfolio purposes.
