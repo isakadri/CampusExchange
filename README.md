@@ -299,7 +299,7 @@ Add your real screenshots to the screenshots/ directory using the filenames belo
 
 📋 Listings
 
-<img src="sc/lisBook.png" alt="CampusBook Exchange My Listings" width="900">
+<img src="sc/listBook.png" alt="CampusBook Exchange My Listings" width="900">
 
 📌 Reservations
 
