@@ -280,41 +280,38 @@ Add your real screenshots to the screenshots/ directory using the filenames belo
 
 <img src="sc/login.png" alt="CampusBook Exchange Login" width="900">
 
-📝 Registration
+📝 MY Reservation
 
-<img src="screenshots/register.png" alt="CampusBook Exchange Registration" width="900">
+<img src="sc/myreservation.png" alt="CampusBook Exchange Registration" width="900">
 
 📊 Student Dashboard
 
-<img src="screenshots/dashboard.png" alt="CampusBook Exchange Dashboard" width="900">
+<img src="sc/Home.png" alt="CampusBook Exchange Dashboard" width="900">
 
 🔎 Search Books
 
-<img src="screenshots/search-books.png" alt="CampusBook Exchange Search Books" width="900">
+<img src="sc/search.png" alt="CampusBook Exchange Search Books" width="900">
 
 📖 Book Details
 
-<img src="screenshots/book-details.png" alt="CampusBook Exchange Book Details" width="900">
+<img src="sc/Screenshot 2026-10-06 143129.png" alt="CampusBook Exchange Book Details" width="900">
 
-➕ Add Book
 
-<img src="screenshots/add-book.png" alt="CampusBook Exchange Add Book" width="900">
+📋 Listings
 
-📋 My Listings
-
-<img src="screenshots/my-listings.png" alt="CampusBook Exchange My Listings" width="900">
+<img src="sc/listingBook.png" alt="CampusBook Exchange My Listings" width="900">
 
 📌 Reservations
 
-<img src="screenshots/reservations.png" alt="CampusBook Exchange Reservations" width="900">
+<img src="sc/reservations.png" alt="CampusBook Exchange Reservations" width="900">
 
 👤 Profile
 
-<img src="screenshots/profile.png" alt="CampusBook Exchange Profile" width="900">
+<img src="sc/profile.png" alt="CampusBook Exchange Profile" width="900">
 
-🌙 Dark Mode
+📋 My Listing
 
-<img src="screenshots/dark-mode.png" alt="CampusBook Exchange Dark Mode" width="900">
+<img src="sc/listings.png" alt="CampusBook Exchange Dark Mode" width="900">
 
 🛠️ Technology Stack
 
