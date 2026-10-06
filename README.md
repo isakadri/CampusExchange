@@ -145,6 +145,8 @@ Reservation was cancelled
 
 Books can be searched using multiple academic and book-related fields.
 
+ ```text
+
 Search
   │
   ├── Title
@@ -152,13 +154,14 @@ Search
   ├── Edition
   ├── Subject Code
   └── Subject Name
+```
 
 This makes the platform more suitable for academic book discovery than a generic marketplace.
 
 📌 Reservation System
 
 CampusBook Exchange provides a complete buyer-seller reservation workflow.
-
+ ```text
 Buyer
   │
   │ Reserve Book
@@ -171,6 +174,9 @@ ACCEPTED        REJECTED
   │               │
   ▼               ▼
  SOLD          AVAILABLE
+
+```
+
 
 Reservation Statuses
 
@@ -366,6 +372,7 @@ Development environment
 🏗️ Architecture
 
 CampusBook Exchange follows a layered MVC-style architecture.
+```text
 
 ┌──────────────────────────────┐
 │          Browser             │
@@ -394,7 +401,9 @@ CampusBook Exchange follows a layered MVC-style architecture.
 │           MySQL              │
 │          Database            │
 └──────────────────────────────┘
+```
 
+```text
 Request Flow
 
 JSP
@@ -412,6 +421,9 @@ DAO
 Servlet
  ↓
 JSP
+```
+
+```text
 
 📂 Project Structure
 
@@ -504,6 +516,8 @@ CampusBookExchange/
 │
 └── README.md
 
+```
+
 🗄️ Database Design
 
 The project uses MySQL as its relational database.
@@ -513,7 +527,7 @@ Database
 CREATE DATABASE campus_book_exchange;
 
 Main Tables
-
+```text
 ┌───────────────┐
 │     users     │
 └───────┬───────┘
@@ -539,7 +553,7 @@ books
   │
   ▼
 buyback
-
+```
 Tables
 
 Table
@@ -679,6 +693,7 @@ http://localhost:8080/CampusBookExchange/
 🧪 Testing Flow
 
 Test the complete application using the following workflow:
+```text
 
 1. Register
       ↓
@@ -699,7 +714,7 @@ Test the complete application using the following workflow:
 9. Accept / Reject
       ↓
 10. Verify Book Status
-
+```
 🧩 Main Modules
 
 Student Module
