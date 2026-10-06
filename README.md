@@ -63,7 +63,7 @@ CampusBook Exchange aims to solve this problem by creating a centralized platfor
 💡 Solution
 
 The application connects students who want to sell unused textbooks with students looking for affordable second-hand books.
-
+```text
 Seller
   │
   ├── Add Book
@@ -78,7 +78,7 @@ Seller
   ├── Search Book
   ├── View Details
   └── Reserve Book
-
+```
 ✨ Features
 
 👤 Authentication
