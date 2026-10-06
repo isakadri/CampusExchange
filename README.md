@@ -274,11 +274,11 @@ Add your real screenshots to the screenshots/ directory using the filenames belo
 
 🏠 Home Page
 
-<img src="screenshots/home.png" alt="CampusBook Exchange Home Page" width="900">
+<img src="sc/Home.png" alt="CampusBook Exchange Home Page" width="900">
 
 🔐 Login
 
-<img src="screenshots/login.png" alt="CampusBook Exchange Login" width="900">
+<img src="sc/login.png" alt="CampusBook Exchange Login" width="900">
 
 📝 Registration
 
