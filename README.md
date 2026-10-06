@@ -311,7 +311,7 @@ Add your real screenshots to the screenshots/ directory using the filenames belo
 
 📋 My Listing
 
-<img src="sc/listings.png" alt="CampusBook Exchange Dark Mode" width="900">
+<img src="sc/mylisting.png" alt="CampusBook Exchange Dark Mode" width="900">
 
 📌 MY Reservations
 
